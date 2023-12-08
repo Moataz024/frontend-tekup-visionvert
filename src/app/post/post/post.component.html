@@ -1,0 +1,47 @@
+<script src="https://kit.fontawesome.com/6f0b1b4523.js" crossorigin="anonymous"></script>
+<div class="row offset-2"><button type="button" *ngIf="posts && posts.length == 0" (click)="openAddPostComponent()" class="btn btn-outline-success btn-lg btn-block">Ajouter un post </button>
+</div>
+
+<div class="row p-5 mx-5 offset-2"><button type="button" *ngIf="posts && posts.length == 1" (click)="openAddPostComponent()" class="btn btn-outline-success btn-lg btn-block">Ajouter un post </button>
+</div>
+
+<div class="row offset-2"><button type="button" *ngIf="posts && posts.length == 2" (click)="openAddPostComponent()" class="btn btn-outline-success btn-lg btn-block">Ajouter un post (where is charlie ?)</button>
+</div>
+
+<div class="row offset-2"><button type="button" *ngIf="posts && posts.length == 3" (click)="openAddPostComponent()" class="btn btn-outline-success btn-lg btn-block">Ajouter un post (charlie charlie)</button>
+</div>
+
+<div class="row offset-2"><button type="button" *ngIf="posts && posts.length == 4" (click)="openAddPostComponent()" class="btn btn-outline-success btn-lg btn-block">Ajouter un post (are you )</button>
+</div>
+
+<div class="row offset-2"><button type="button" *ngIf="posts && posts.length == 5" (click)="openAddPostComponent()" class="btn btn-outline-success btn-lg btn-block">Ajouter un post (there )</button>
+</div>
+
+<div class="row offset-2"><button type="button" *ngIf="posts && posts.length > 5" (click)="openAddPostComponent()" class="btn btn-outline-success btn-lg btn-block">Ajouter un post (Charlie should be here!)</button>
+</div>
+
+
+<div *ngIf="posts && posts.length > 0">
+  <div class="row p-2 m-5" >
+    <div class="col-3 my-2" *ngFor="let post of posts">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="..." alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{post.sujet}}</h5>
+          <p class="card-text">{{post.description}}</p>
+          <div class="row">
+            <div class="col-1 mx-5">
+              <a href="#" class="btn btn-primary" (click)="like(post)">{{post.nbrlike}}</a>
+            </div>
+            <div class="col-1 mx-5">
+              <a href="#" class="btn btn-outline-dark"(click)="dislike(post)" >{{post.nbrdislike}}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div *ngIf="posts && posts.length > 5">
+  <img src="assets/charlie.png" alt=""/>
+</div>
+</div>
